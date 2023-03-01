@@ -36,7 +36,7 @@ publishDir = "docs"
     [params.profile]
         name = "Ryohei Kamei"
         tagline = "亀井 遼平"
-        location = "Tohoku NLP"
+        location = "Tohoku NLP Group"
         photo = "profile.jpg"
 
     # Section for links to social websites
