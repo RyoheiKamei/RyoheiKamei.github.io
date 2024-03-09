@@ -129,7 +129,7 @@ publishDir = "docs"
         authors = "亀井遼平, 横井祥, 仲村祐希, 渡辺太郎, 乾健太郎"
         date = "2023"
         journal = "Annual Meetings of the Association for Natural Language Processing"
-        url = "#"
+        url = "https://www.anlp.jp/proceedings/annual_meeting/2023/pdf_dir/C5-3.pdf"
         type = "Proceedings"
 
     [[params.publication.list]]
@@ -137,7 +137,7 @@ publishDir = "docs"
         authors = "亀井遼平, 塩野大輝, 赤間怜奈, 鈴木潤"
         date = "2023"
         journal = "The Young Researcher Association for NLP Studies"
-        url = "#"
+#         url = "#"
         type = "Proceedings"
 
     [[params.publication.list]]
