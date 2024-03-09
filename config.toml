@@ -65,6 +65,8 @@ publishDir = "docs"
     [[params.showInAccordion]]
         item = "publication"
     [[params.showInAccordion]]
+        item = "award"
+    [[params.showInAccordion]]
         item = "project"
     [[params.showInAccordion]]
         item = "skill"
@@ -74,7 +76,7 @@ publishDir = "docs"
     [params.aboutme]
         title = "About Me"
         icon = "fas fa-user"
-        description = "4th year student of Tohoku University Department of Electrical Information and Physics Engineering, Tohoku NLP Group"
+        description = "1st year master's student of Graduate School of Information Sciences, Tohoku University @Tohoku NLP Group"
 
     # Experience section
     [params.experience]
@@ -97,9 +99,14 @@ publishDir = "docs"
         title = "Education"
         icon = "fas fa-graduation-cap"
 
+        [[params.education.list]]
+            degree = "M.S. in Information Science"
+            college = "Tohoku University"
+            dates = "2023 - "
+
 
         [[params.education.list]]
-            degree = "B.S. in Information Science"
+            degree = "B.E. in Computer Science"
             college = "Tohoku University"
             dates = "2019 - 2023"
 
@@ -117,13 +124,64 @@ publishDir = "docs"
         #If you don't want to group publications, comment the line below by adding # at the beginning
         types = ["Journal Articles", "Proceedings"]
 
-#        [[params.publication.list]]
-#            title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-#            authors = "F Last, F Second, P secondary"
-#            date = "2018"
-#            journal = "Journal of Field 52 (16), 9033-9044"
-#            url = "#"
-#            type = "Journal Articles"
+    [[params.publication.list]]
+        title = "柔らかいジャンプ付き編集距離に向けて"
+        authors = "亀井遼平, 横井祥, 仲村祐希, 渡辺太郎, 乾健太郎"
+        date = "2023"
+        journal = "Annual Meetings of the Association for Natural Language Processing"
+        url = "#"
+        type = "Proceedings"
+
+    [[params.publication.list]]
+        title = "生成応答に含まれる事実に基づかない情報の自動検出の試み"
+        authors = "亀井遼平, 塩野大輝, 赤間怜奈, 鈴木潤"
+        date = "2023"
+        journal = "The Young Researcher Association for NLP Studies"
+        url = "#"
+        type = "Proceedings"
+
+    [[params.publication.list]]
+        title = "Hagi bot: LLMを用いた対話状態追跡と人間らしい振る舞いで自然な議論を行うマルチモーダル対話システム"
+        authors = "中野 雄斗、野末 慎之介、穀田 一真、有山 知希、佐藤 魁、曾根 周作、亀井 遼平、謝 素春、成田 風香、守屋 彰二、赤間 怜奈、松林 優一郎、坂口 慶祐"
+        date = "2023"
+        journal = "The Japanese Society for Artificial Intelligence Special Interest Group on Spoken Language Understanding and Dialogue Processing"
+        url = "https://www.jstage.jst.go.jp/article/jsaislud/99/0/99_102/_article/-char/ja/"
+        type = "Proceedings"
+
+
+    [[params.publication.list]]
+        title = "事実正誤判定が不要な生成応答の検出に向けたデータセットの収集と分析"
+        authors = "亀井遼平, 塩野大輝, 赤間怜奈, 鈴木潤"
+        date = "2024"
+        journal = "Annual Meetings of the Association for Natural Language Processing"
+        url = "https://www.anlp.jp/proceedings/annual_meeting/2024/pdf_dir/B8-3.pdf"
+        type = "Proceedings"
+
+    # Award section
+    [params.award]
+        title = "Awards"
+        icon = "fas fa-trophy"
+        [[params.award.list]]
+            title = "NLP若手の会 (YANS) 第18回シンポジウム 奨励賞"
+            url = "https://yans.anlp.jp/entry/award"
+        
+        [[params.award.list]]
+            title = "NLP若手の会 (YANS) 第18回シンポジウム スポンサー賞 サイバーエージェント賞"
+            url = "https://yans.anlp.jp/entry/award"
+
+        [[params.award.list]]
+            title = "NLP若手の会 (YANS) 第18回シンポジウム ハッカソン賞 デモアプリ開発ハッカソン　優秀賞"
+            url = "https://yans.anlp.jp/entry/award"
+
+        [[params.award.list]]
+            title = "NLP若手の会 (YANS) 第18回シンポジウム ハッカソン賞 デモアプリ開発ハッカソン　審査員特別賞"
+            url = "https://yans.anlp.jp/entry/award"
+
+        [[params.award.list]]
+            title = "第99回 人工知能学会言語・音声理解と対話処理研究会 第6回対話システムライブコンペティション 最優秀賞"
+            url = "https://sites.google.com/view/dslc6/%E7%B5%90%E6%9E%9C?authuser=0"
+
+
 
 
     # Project section
@@ -132,13 +190,19 @@ publishDir = "docs"
         icon = "fas fa-project-diagram"
 
         [[params.project.list]]
-            title = "NLP 100 Knocks"
-            url = "https://nlp100.github.io/ja/"
-            description = "Learning NLP with Python"
-        [[params.project.list]]
-            title = "Learning Fundamentals of NLP"
-            url = "https://www.nlp.ecei.tohoku.ac.jp/study-groups/learning-fundamentals-of-nlp/"
-            description = "Learning NLP"
+            title = "東北社会課題解決型クリエーター発掘・育成プログラム SICA (Social Impact Creators' Accelerator)"
+            url = "https://sica-tohoku.com/"
+
+#         [[params.project.list]]
+#             title = "NLP 100 Knocks"
+#             url = "https://nlp100.github.io/ja/"
+#             description = "Learning NLP with Python"
+#         [[params.project.list]]
+#             title = "Learning Fundamentals of NLP"
+#             url = "https://www.nlp.ecei.tohoku.ac.jp/study-groups/learning-fundamentals-of-nlp/"
+#             description = "Learning NLP"
+
+
 
 
     # Skill section
