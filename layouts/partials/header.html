@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="wordmark" href="{{ .Site.BaseURL }}" aria-label="Ryohei Kamei — Home">
+      <span class="wordmark-mark" aria-hidden="true">RK</span>
+      <span class="wordmark-name">Ryohei Kamei</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      {{ if .IsHome }}
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#recognition">Recognition</a>
+      {{ else }}
+      <a href="{{ .Site.BaseURL }}#about">About</a>
+      <a href="{{ .Site.BaseURL }}#publications">Publications</a>
+      <a href="{{ .Site.BaseURL }}#recognition">Recognition</a>
+      {{ end }}
+    </nav>
+
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+      <span class="theme-toggle-dot" aria-hidden="true"></span>
+      <span class="theme-toggle-label">Theme</span>
+    </button>
+  </div>
+</header>

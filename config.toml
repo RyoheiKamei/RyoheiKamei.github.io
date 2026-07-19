@@ -36,8 +36,16 @@ publishDir = "docs"
     [params.profile]
         name = "Ryohei Kamei"
         tagline = "亀井 遼平"
-        location = "Tohoku NLP Group"
+        location = "Tohoku NLP Group · Failab"
         photo = "profile.jpg"
+
+        [[params.profile.affiliations]]
+            name = "Tohoku NLP Group"
+            url = "https://www.nlp.ecei.tohoku.ac.jp/"
+
+        [[params.profile.affiliations]]
+            name = "Jun Suzuki Laboratory (Failab)"
+            url = "https://www.fai.cds.tohoku.ac.jp/"
 
     # Section for links to social websites
     [params.social]
@@ -51,7 +59,7 @@ publishDir = "docs"
         [[params.social.list]]
             icon = "fab fa-twitter"
             url = "https://twitter.com/ka_me1024"
-            title = "Twitter"
+            title = "X(Twitter)"
 
 
     #Specify what is showin in the Accordion
@@ -76,7 +84,7 @@ publishDir = "docs"
     [params.aboutme]
         title = "About Me"
         icon = "fas fa-user"
-        description = "1st year master's student of Graduate School of Information Sciences, Tohoku University @Tohoku NLP Group"
+        description = "2nd-year Ph.D. student at the Graduate School of Information Sciences, Tohoku University. Member of Tohoku NLP Group and Jun Suzuki Laboratory (Failab)."
 
     # Experience section
     [params.experience]
@@ -100,9 +108,14 @@ publishDir = "docs"
         icon = "fas fa-graduation-cap"
 
         [[params.education.list]]
+            degree = "Ph.D. in Information Science"
+            college = "Tohoku University"
+            dates = "2025 - Present"
+
+        [[params.education.list]]
             degree = "M.S. in Information Science"
             college = "Tohoku University"
-            dates = "2023 - "
+            dates = "2023 - 2025"
 
 
         [[params.education.list]]
@@ -119,66 +132,104 @@ publishDir = "docs"
     [params.publication]
         title = "Publications"
         icon = "fas fa-book"
-        #The order below determines the order in which the items appear in "Publications" section
         format = ["date", "authors", "title", "journal"]
-        #If you don't want to group publications, comment the line below by adding # at the beginning
-        types = ["Journal Articles", "Proceedings"]
+        types = ["International Conferences (Peer-reviewed)", "Domestic Conferences & Symposia (Non-peer-reviewed)"]
+
+    [[params.publication.list]]
+        title = "Detecting Response Generation Not Requiring Factual Judgment"
+        authors = "Ryohei Kamei, Daiki Shiono, Reina Akama, Jun Suzuki"
+        date = "2024.06"
+        journal = "Archival submission for the 2024 NAACL Student Research Workshop (NAACL SRW) · Mexico City · June 2024"
+        url = "https://aclanthology.org/2024.naacl-srw.13/"
+        type = "International Conferences (Peer-reviewed)"
+
+    [[params.publication.list]]
+        title = "Vulnerability of LLM Outputs to Heuristics-Inducing Prompt Structures"
+        authors = "Toshiki Kuramoto, Ryohei Kamei, Jun Suzuki"
+        date = "2026.03"
+        journal = "IUI 2026 · Cyprus · March 2026"
+        url = "https://dl.acm.org/doi/10.1145/3742413.3789108"
+        type = "International Conferences (Peer-reviewed)"
 
     [[params.publication.list]]
         title = "柔らかいジャンプ付き編集距離に向けて"
         authors = "亀井遼平, 横井祥, 仲村祐希, 渡辺太郎, 乾健太郎"
-        date = "2023"
-        journal = "Annual Meetings of the Association for Natural Language Processing"
+        date = "2023.03"
+        journal = "言語処理学会第29回年次大会（NLP2023）· pp.1192–1197 · 2023年3月"
         url = "https://www.anlp.jp/proceedings/annual_meeting/2023/pdf_dir/C5-3.pdf"
-        type = "Proceedings"
+        type = "Domestic Conferences & Symposia (Non-peer-reviewed)"
 
     [[params.publication.list]]
         title = "生成応答に含まれる事実に基づかない情報の自動検出の試み"
         authors = "亀井遼平, 塩野大輝, 赤間怜奈, 鈴木潤"
-        date = "2023"
-        journal = "The Young Researcher Association for NLP Studies"
-#         url = "#"
-        type = "Proceedings"
+        date = "2023.08"
+        journal = "NLP若手の会（YANS）第18回シンポジウム · 2023年8月"
+        type = "Domestic Conferences & Symposia (Non-peer-reviewed)"
 
     [[params.publication.list]]
         title = "Hagi bot: LLMを用いた対話状態追跡と人間らしい振る舞いで自然な議論を行うマルチモーダル対話システム"
-        authors = "中野 雄斗、野末 慎之介、穀田 一真、有山 知希、佐藤 魁、曾根 周作、亀井 遼平、謝 素春、成田 風香、守屋 彰二、赤間 怜奈、松林 優一郎、坂口 慶祐"
-        date = "2023"
-        journal = "The Japanese Society for Artificial Intelligence Special Interest Group on Spoken Language Understanding and Dialogue Processing"
+        authors = "中野雄斗, 野末慎之介, 穀田一真, 有山知希, 佐藤魁, 曾根周作, 亀井遼平, 謝素春, 成田風香, 守屋彰二, 赤間怜奈, 松林優一郎, 坂口慶祐"
+        date = "2023.12"
+        journal = "人工知能学会 言語・音声理解と対話処理研究会（SLUD）第99回研究会（第14回対話システムシンポジウム）· 2023年12月"
         url = "https://www.jstage.jst.go.jp/article/jsaislud/99/0/99_102/_article/-char/ja/"
-        type = "Proceedings"
-
+        type = "Domestic Conferences & Symposia (Non-peer-reviewed)"
 
     [[params.publication.list]]
         title = "事実正誤判定が不要な生成応答の検出に向けたデータセットの収集と分析"
         authors = "亀井遼平, 塩野大輝, 赤間怜奈, 鈴木潤"
-        date = "2024"
-        journal = "Annual Meetings of the Association for Natural Language Processing"
+        date = "2024.03"
+        journal = "言語処理学会第30回年次大会（NLP2024）· pp.2125–2130 · 2024年3月"
         url = "https://www.anlp.jp/proceedings/annual_meeting/2024/pdf_dir/B8-3.pdf"
-        type = "Proceedings"
+        type = "Domestic Conferences & Symposia (Non-peer-reviewed)"
+
+    [[params.publication.list]]
+        title = "JHARS: RAG設定における日本語Hallucination評価ベンチマークの構築と分析"
+        authors = "亀井遼平*, 坂田将樹*, 邊土名朝飛, 栗原健太郎, 乾健太郎（* equal contribution）"
+        date = "2025.03"
+        journal = "言語処理学会第31回年次大会（NLP2025）· pp.833–838 · 2025年3月"
+        url = "https://www.anlp.jp/proceedings/annual_meeting/2025/pdf_dir/Q2-17.pdf"
+        type = "Domestic Conferences & Symposia (Non-peer-reviewed)"
+
+    [[params.publication.list]]
+        title = "hallucination可視化における主観的評価と情報取得の正確性のギャップ"
+        authors = "亀井遼平, 坂田将樹, 邊土名朝飛, 栗原健太郎, 乾健太郎"
+        date = "2026.03"
+        journal = "言語処理学会第32回年次大会（NLP2026）· pp.1012–1017 · 2026年3月"
+        url = "https://www.anlp.jp/proceedings/annual_meeting/2026/pdf_dir/B3-6.pdf"
+        type = "Domestic Conferences & Symposia (Non-peer-reviewed)"
+
+    [[params.publication.list]]
+        title = "家族日常対話における計画情報抽出"
+        authors = "沼屋征海, 佐藤魁, 吉田倖, 亀井遼平, 所年雄, 滑川登, 濱口泰時, 上村崇, 乾健太郎, 坂口慶祐"
+        date = "2026.03"
+        journal = "言語処理学会第32回年次大会（NLP2026）· pp.2413–2418 · 2026年3月"
+        url = "https://www.anlp.jp/proceedings/annual_meeting/2026/pdf_dir/Q5-7.pdf"
+        type = "Domestic Conferences & Symposia (Non-peer-reviewed)"
 
     # Award section
     [params.award]
         title = "Awards"
         icon = "fas fa-trophy"
+
         [[params.award.list]]
-            title = "NLP若手の会 (YANS) 第18回シンポジウム 奨励賞"
-            url = "https://yans.anlp.jp/entry/award"
-        
-        [[params.award.list]]
-            title = "NLP若手の会 (YANS) 第18回シンポジウム スポンサー賞 サイバーエージェント賞"
+            title = "生成応答に含まれる事実に基づかない情報の自動検出の試み"
+            authors = "亀井遼平, 塩野大輝, 赤間怜奈, 鈴木潤"
+            venue = "NLP若手の会（YANS）第18回シンポジウム · 2023年8月"
+            honors = ["奨励賞（20件 / 138件）", "スポンサー賞・サイバーエージェント賞（2件 / 138件）"]
             url = "https://yans.anlp.jp/entry/award"
 
         [[params.award.list]]
-            title = "NLP若手の会 (YANS) 第18回シンポジウム ハッカソン賞 デモアプリ開発ハッカソン　優秀賞"
+            title = "大喜利マスターズ"
+            authors = "馬越雅人, 加藤大地, 亀井遼平, 片山歩希"
+            venue = "YANS分野交流ハッカソン with 言語処理学会30周年記念事業 デモアプリ開発ハッカソン · 2023年8月"
+            honors = ["優秀賞（1チーム / 6チーム）", "審査員特別賞（1チーム / 6チーム）"]
             url = "https://yans.anlp.jp/entry/award"
 
         [[params.award.list]]
-            title = "NLP若手の会 (YANS) 第18回シンポジウム ハッカソン賞 デモアプリ開発ハッカソン　審査員特別賞"
-            url = "https://yans.anlp.jp/entry/award"
-
-        [[params.award.list]]
-            title = "第99回 人工知能学会言語・音声理解と対話処理研究会 第6回対話システムライブコンペティション 最優秀賞"
+            title = "Hagi bot: LLMを用いた対話状態追跡と人間らしい振る舞いで自然な議論を行うマルチモーダル対話システム"
+            authors = "中野雄斗, 野末慎之介, 穀田一真, 有山知希, 佐藤魁, 曾根周作, 亀井遼平, 謝素春, 成田風香, 守屋彰二, 赤間怜奈, 松林優一郎, 坂口慶祐"
+            venue = "第99回SLUD研究会 対話システムライブコンペティション6 · 2023年12月"
+            honors = ["最優秀賞（1チーム / 8チーム）"]
             url = "https://sites.google.com/view/dslc6/%E7%B5%90%E6%9E%9C?authuser=0"
 
 
@@ -186,24 +237,21 @@ publishDir = "docs"
 
     # Project section
     [params.project]
-        title = "Projects"
+        title = "Projects & Programs"
         icon = "fas fa-project-diagram"
 
         [[params.project.list]]
-            title = "東北社会課題解決型クリエーター発掘・育成プログラム SICA (Social Impact Creators' Accelerator)"
+            title = "AKATSUKIプロジェクト 東北社会課題解決型クリエーター発掘・育成プログラム SICA（Social Impact Creators' Accelerator）"
+            status = "Selected"
             url = "https://sica-tohoku.com/"
 
-#         [[params.project.list]]
-#             title = "NLP 100 Knocks"
-#             url = "https://nlp100.github.io/ja/"
-#             description = "Learning NLP with Python"
-#         [[params.project.list]]
-#             title = "Learning Fundamentals of NLP"
-#             url = "https://www.nlp.ecei.tohoku.ac.jp/study-groups/learning-fundamentals-of-nlp/"
-#             description = "Learning NLP"
+        [[params.project.list]]
+            title = "東北大学 データ科学国際共同大学院プログラム"
+            status = "Selected · April 2024"
 
-
-
+        [[params.project.list]]
+            title = "東北大学高等大学院 次世代AI人材育成プロジェクト"
+            status = "Selected · April 2025"
 
     # Skill section
     [params.skill]

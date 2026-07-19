@@ -1,0 +1,45 @@
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYQ4KXKBDL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LYQ4KXKBDL');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <meta name="theme-color" content="#f4f3ef">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Params.profile.name }}{{ else }}{{ .Title }} — {{ .Site.Params.profile.name }}{{ end }}">
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ `images/og.png` | absURL }}">
+  <meta property="og:image:width" content="1731">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Ryohei Kamei — Tohoku NLP Group">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ `images/og.png` | absURL }}">
+  <title>{{ if .IsHome }}{{ .Site.Params.profile.name }} — {{ .Site.Params.profile.location }}{{ else }}{{ .Title }} — {{ .Site.Params.profile.name }}{{ end }}</title>
+
+  {{ if .Site.Params.favicons.use }}
+  {{- $metas := .Site.Params.favicons.metas }}
+  {{- range (split $metas "\n") }}
+  {{- $original := index (findRE `href=\"(.*?)\"` .) 0 }}
+  {{- $processed := replaceRE `href=|\"` `` $original | relURL }}
+  {{- replaceRE `(href=\")(.*?)(\")` (print `$1` $processed `$3`) . | safeHTML }}
+  {{- end }}
+  {{ end }}
+
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    }());
+  </script>
+  <link rel="stylesheet" href="{{ `css/portfolio.css` | relURL }}">
+</head>

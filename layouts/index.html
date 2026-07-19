@@ -1,0 +1,205 @@
+{{ define "main" }}
+<div id="top"></div>
+
+<section class="hero shell" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow reveal reveal-1">Graduate School of Information Sciences · Tohoku University</p>
+    <h1 id="hero-title" class="reveal reveal-2">
+      <span>{{ .Site.Params.profile.name }}</span>
+      <span class="hero-name-jp">{{ .Site.Params.profile.tagline }}</span>
+    </h1>
+    <p class="hero-intro reveal reveal-3">{{ .Site.Params.aboutme.description }}</p>
+    <div class="hero-actions reveal reveal-4">
+      {{ range .Site.Params.social.list }}
+      <a class="text-link" href="{{ .url }}" target="_blank" rel="noreferrer">
+        {{ .title }} <span aria-hidden="true">↗</span>
+      </a>
+      {{ end }}
+      <a class="text-link" href="#publications">Selected work <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+
+  <div class="portrait-wrap reveal reveal-3">
+    <div class="portrait-frame">
+      <img src="{{ `images` | relURL }}/{{ .Site.Params.profile.photo }}" alt="Portrait of {{ .Site.Params.profile.name }}" width="1147" height="1147">
+    </div>
+    <div class="portrait-meta" aria-label="Affiliation">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="affiliation-inline">
+        {{ range $index, $affiliation := .Site.Params.profile.affiliations }}
+        {{ if $index }}<span aria-hidden="true"> · </span>{{ end }}
+        {{ if $affiliation.url }}<a href="{{ $affiliation.url }}" target="_blank" rel="noreferrer">{{ $affiliation.name }}</a>{{ else }}{{ $affiliation.name }}{{ end }}
+        {{ end }}
+      </span>
+      <span class="portrait-index">01 / Profile</span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Natural Language Processing</span><i></i>
+    <span>Dialogue Systems</span><i></i>
+    <span>Tohoku University</span><i></i>
+    <span>Natural Language Processing</span><i></i>
+    <span>Dialogue Systems</span><i></i>
+    <span>Tohoku University</span><i></i>
+  </div>
+</div>
+
+<section id="about" class="section shell section-grid" aria-labelledby="about-title">
+  <div class="section-kicker">
+    <span>02</span>
+    <p>About</p>
+  </div>
+  <div class="section-content">
+    <h2 id="about-title">Researcher in language<br>and intelligent systems.</h2>
+    <p class="lead">{{ .Site.Params.aboutme.description }}</p>
+
+    <div class="split-block">
+      <div>
+        <h3>{{ .Site.Params.education.title }}</h3>
+      </div>
+      <ol class="timeline">
+        {{ range .Site.Params.education.list }}
+        <li>
+          <p class="timeline-date">{{ .dates }}</p>
+          <div>
+            <h4>{{ .degree }}</h4>
+            <p>{{ .college }}</p>
+          </div>
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="publications" class="section section-tinted" aria-labelledby="publications-title">
+  <div class="shell section-grid">
+    <div class="section-kicker">
+      <span>03</span>
+      <p>Selected work</p>
+    </div>
+    <div class="section-content">
+      <div class="section-heading-row">
+        <h2 id="publications-title">Publications</h2>
+        <p>{{ len .Site.Params.publication.list }} works</p>
+      </div>
+
+      {{ $publicationNumber := newScratch }}
+      {{ $publicationNumber.Set "value" 0 }}
+      {{ range $type := .Site.Params.publication.types }}
+      {{ $works := where $.Site.Params.publication.list "type" $type }}
+      <section class="publication-group" aria-labelledby="publication-group-{{ $type | urlize }}">
+        <header class="publication-group-heading">
+          <h3 id="publication-group-{{ $type | urlize }}">{{ $type }}</h3>
+          <span>{{ len $works }}</span>
+        </header>
+        <ol class="publication-list">
+          {{ range $item := $works }}
+          {{ $publicationNumber.Add "value" 1 }}
+          <li class="publication-item">
+            <div class="publication-number">{{ printf "%02d" ($publicationNumber.Get "value") }}</div>
+            <div class="publication-body">
+              <p class="publication-meta">{{ $item.date }} · {{ $item.journal }}</p>
+              <h3>{{ if $item.url }}<a href="{{ $item.url }}" target="_blank" rel="noreferrer">{{ $item.title }}</a>{{ else }}{{ $item.title }}{{ end }}</h3>
+              <p class="publication-authors">{{ $item.authors }}</p>
+            </div>
+            {{ if $item.url }}<a class="publication-arrow" href="{{ $item.url }}" target="_blank" rel="noreferrer" aria-label="Open {{ $item.title }}">↗</a>{{ end }}
+          </li>
+          {{ end }}
+        </ol>
+      </section>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="recognition" class="section shell section-grid" aria-labelledby="recognition-title">
+  <div class="section-kicker">
+    <span>04</span>
+    <p>Recognition</p>
+  </div>
+  <div class="section-content">
+    <h2 id="recognition-title">Awards & projects</h2>
+
+    <div class="recognition-grid">
+      <div class="awards-block">
+        <h3>{{ .Site.Params.award.title }}</h3>
+        <ul class="award-list">
+          {{ range $index, $award := .Site.Params.award.list }}
+          <li class="award-item">
+            <div class="award-number">{{ printf "%02d" (add $index 1) }}</div>
+            <div class="award-body">
+              <p class="award-venue">{{ $award.venue }}</p>
+              <h4>{{ if $award.url }}<a href="{{ $award.url }}" target="_blank" rel="noreferrer">{{ $award.title }}</a>{{ else }}{{ $award.title }}{{ end }}</h4>
+              <p class="award-authors">{{ $award.authors }}</p>
+              <ul class="honor-list">
+                {{ range $award.honors }}<li>{{ . }}</li>{{ end }}
+              </ul>
+            </div>
+            {{ if $award.url }}<a class="publication-arrow" href="{{ $award.url }}" target="_blank" rel="noreferrer" aria-label="Open award details for {{ $award.title }}">↗</a>{{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div class="programs-block">
+        <h3>{{ .Site.Params.project.title }}</h3>
+        <ol class="project-list">
+          {{ range $index, $project := .Site.Params.project.list }}
+          <li>
+            <span class="project-number">{{ printf "%02d" (add $index 1) }}</span>
+            <div>
+              <p>{{ $project.status }}</p>
+              <h4>{{ if $project.url }}<a href="{{ $project.url }}" target="_blank" rel="noreferrer">{{ $project.title }} <span aria-hidden="true">↗</span></a>{{ else }}{{ $project.title }}{{ end }}</h4>
+            </div>
+          </li>
+          {{ end }}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section compact-section shell section-grid" aria-labelledby="details-title">
+  <div class="section-kicker">
+    <span>05</span>
+    <p>Elsewhere</p>
+  </div>
+  <div class="section-content">
+    <h2 id="details-title" class="visually-hidden">Skills and hobbies</h2>
+    <div class="detail-grid">
+      <div>
+        <h3>{{ .Site.Params.skill.title }}</h3>
+        <ul class="tag-list">
+          {{ range .Site.Params.skill.list }}<li>{{ .skill }}</li>{{ end }}
+        </ul>
+      </div>
+      <div>
+        <h3>{{ .Site.Params.hobby.title }}</h3>
+        <ul class="tag-list">
+          {{ range .Site.Params.hobby.list }}<li>{{ .hobby }}</li>{{ end }}
+        </ul>
+      </div>
+      <div>
+        <h3>Affiliations</h3>
+        <ul class="link-list vertical-link-list">
+          {{ range .Site.Params.profile.affiliations }}
+          <li>{{ if .url }}<a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .name }} <span aria-hidden="true">↗</span></a>{{ else }}{{ .name }}{{ end }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      <div>
+        <h3>{{ .Site.Params.social.title }}</h3>
+        <ul class="link-list">
+          {{ range .Site.Params.social.list }}
+          <li><a href="{{ .url }}" target="_blank" rel="noreferrer">{{ .title }} <span aria-hidden="true">↗</span></a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

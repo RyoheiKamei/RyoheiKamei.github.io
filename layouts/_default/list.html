@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="page-shell shell">
+  <header class="page-header">
+    <p class="eyebrow">Writing & updates</p>
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="post-list">
+    {{ range .Paginator.Pages }}
+    <article class="post-row">
+      <p>{{ .Date.Format "2006.01.02" }}</p>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <a href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">→</a>
+    </article>
+    {{ end }}
+  </div>
+  {{ template "_internal/pagination.html" . }}
+</section>
+{{ end }}

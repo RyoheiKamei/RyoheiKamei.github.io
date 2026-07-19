@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="article-shell shell">
+  <header class="article-header">
+    <p class="eyebrow">{{ .Date.Format "January 2, 2006" }} · {{ .ReadingTime }} min read</p>
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="article-content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
