@@ -41,10 +41,12 @@ publishDir = "docs"
 
         [[params.profile.affiliations]]
             name = "Tohoku NLP Group"
+            label = "Tohoku NLP Group"
             url = "https://www.nlp.ecei.tohoku.ac.jp/"
 
         [[params.profile.affiliations]]
             name = "Jun Suzuki Laboratory (Failab)"
+            label = "Failab"
             url = "https://www.fai.cds.tohoku.ac.jp/"
 
     # Section for links to social websites
